@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: demo-web-service
 spec:
-  type: LoadBalancer # ClusterIP(default) - for internal use | NodePort | LoadBalancer
+  type: NodePort # ClusterIP(default) - for internal use | NodePort | LoadBalancer
   selector:
     app: demo-web-app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
+      nodePort: 30080 # This is only needed for type: NodePort
