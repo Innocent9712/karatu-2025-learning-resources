@@ -280,3 +280,8 @@ spec:
     - port: 3000
       targetPort: 3000
       nodePort: 30080
+
+
+
+# kind load docker-image <image-name:tag>
+# docker exec -it kind-control-plane crictl images
